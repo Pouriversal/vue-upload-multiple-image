@@ -423,10 +423,10 @@ export default {
         let dataURI = e.target.result
         if (dataURI) {
           if (!this.images.length) {
-            this.images.push({ name: file.name, path: dataURI, highlight: 1, default: 1 })
+            this.images.push({ name: file.name, path: dataURI, highlight: 1, default: 1,file:file })
             this.currentIndexImage = 0
           } else {
-            this.images.push({ name: file.name, path: dataURI, highlight: 0, default: 0 })
+            this.images.push({ name: file.name, path: dataURI, highlight: 0, default: 0,file:file })
           }
           this.$emit('upload-success', formData, this.images.length - 1, this.images)
         }
